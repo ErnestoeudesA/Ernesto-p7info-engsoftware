@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Test Suite</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.19.1.css">
+</head>
+
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-2.19.1.js"></script>
+
+  <script>
+      class Calculadora {
+
+        sum(a, b) {
+            return a + b 
+        }
+
+        sub(a, b) {
+            return a - b 
+        }
+
+        multi(a, b) {
+            return a * b 
+        }
+
+        div(a, b) {
+            return a / b 
+        }
+
+      }
+
+
+    QUnit.test("Soma", function(assert){
+    teste = new Calculadora()
+    assert.equal(teste.sum(10, 2), 12)
+    assert.equal(teste.sum(-10, 3), -7)
+    assert.equal(teste.sum(-4, -4), -8)
+    assert.equal(teste.sum(105, 123), 228)
+})
+
+
+QUnit.test("Subtração", function(assert){
+    teste = new Calculadora()
+    assert.equal(teste.sub(150, 30), 120)
+    assert.equal(teste.sub(10, -2), 12)
+    assert.equal(teste.sub(-4, -4), 0)
+    assert.equal(teste.sub(1400, 700), 700)
+})
+
+QUnit.test("Multiplicação", function(assert){
+    teste = new Calculadora()
+    assert.equal(teste.multi(-10, 2), -20)
+    assert.equal(teste.multi(500, 3), 1500)
+    assert.equal(teste.multi(-4, -4), 16)
+    assert.equal(teste.multi(300, 0), 0)
+})
+
+QUnit.test("Divisão", function(assert){
+    teste = new Calculadora()
+    assert.equal(teste.div(10, 2), 5)
+    assert.equal(teste.div(-50, 2), -25)
+    assert.equal(teste.div(-4, -4), 1)
+    assert.equal(teste.div(30, 3), 10)
+})
+
+
+  </script>
+</body>
+</html>
